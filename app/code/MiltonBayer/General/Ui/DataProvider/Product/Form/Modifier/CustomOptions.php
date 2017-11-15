@@ -116,19 +116,16 @@
                             ],
                         ],
                         'children' => [
-                            // static::FIELD_TITLE_NAME => $this->getTitleFieldConfig(
-                            //     10,
-                            //     $this->locator->getProduct()->getStoreId() ? $options : []
-                            // ),
-                            // static::FIELD_PRICE_NAME => $this->getPriceFieldConfigForSelectType(20),
-                            // static::FIELD_PRICE_TYPE_NAME => $this->getPriceTypeFieldConfig(30, ['fit' => true]),
-                            // static::FIELD_CONDITIONAL_ON_NAME => $this->getConditionalFieldConfig(
-                            //     35,
-                            //     $this->locator->getProduct()->getStoreId() == 0 ? false : true
-                            // ),
-                            // static::FIELD_SKU_NAME => $this->getSkuFieldConfig(40),
-                            // static::FIELD_SORT_ORDER_NAME => $this->getPositionFieldConfig(50),
-                            // static::FIELD_IS_DELETE => $this->getIsDeleteFieldConfig(60)
+                            static::FIELD_TITLE_NAME => $this->getTitleFieldConfig(10),
+                            static::FIELD_PRICE_NAME => $this->getPriceFieldConfig(20),
+                            static::FIELD_PRICE_TYPE_NAME => $this->getPriceTypeFieldConfig(30, ['fit' => true]),
+                            static::FIELD_CONDITIONAL_ON_NAME => $this->getConditionalFieldConfig(
+                                35,
+                                $this->locator->getProduct()->getStoreId() == 0 ? false : true
+                            ),
+                            static::FIELD_SKU_NAME => $this->getSkuFieldConfig(40),
+                            static::FIELD_SORT_ORDER_NAME => $this->getPositionFieldConfig(50),
+                            static::FIELD_IS_DELETE => $this->getIsDeleteFieldConfig(60)
                         ]
                     ]
                 ]
@@ -161,19 +158,5 @@
                     ],
                 ],
             ];
-        }
-
-        /**
-         * Get config for "Price" field for select type.
-         *
-         * @param int $sortOrder
-         * @return array
-         */
-        private function getPriceFieldConfigForSelectType(int $sortOrder)
-        {
-            $priceFieldConfig = $this->getPriceFieldConfig($sortOrder);
-            $priceFieldConfig['arguments']['data']['config']['template'] = 'Magento_Catalog/form/field';
-
-            return $priceFieldConfig;
         }
     }
