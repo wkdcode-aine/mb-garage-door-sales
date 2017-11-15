@@ -11,7 +11,7 @@ class Options implements \Magento\Framework\Option\ArrayInterface
      * [private description]
      * @var [type]
      */
-    private $optionCollection;
+    private $_optionCollection;
 
     /**
      *
@@ -19,7 +19,7 @@ class Options implements \Magento\Framework\Option\ArrayInterface
     public function __construct(
         \Magento\Catalog\Model\ResourceModel\Product\Option\Collection $optionCollection
     ) {
-        $this->optionCollection = $optionCollection;
+        $this->_optionCollection = $optionCollection;
     }
 
     /**
@@ -27,9 +27,9 @@ class Options implements \Magento\Framework\Option\ArrayInterface
      */
     public function toOptionArray()
     {
-        $groups = [['value' => '', 'label' => __('-- Please select --')]];
+        // $groups = [['value' => '', 'label' => __('-- Please select --')]];
 
-        foreach($this->optionCollection->addTitleToResult(0)->addValuesToResult(0)->getItems() as $item) {
+        foreach($this->_optionCollection->addTitleToResult(0)->addValuesToResult(0)->getItems() as $item) {
             $types = [];
 
             foreach($item->getValues() as $value) $types[] = ['label' => $value->getData('title'), 'value' => $value->getData('option_type_id')];

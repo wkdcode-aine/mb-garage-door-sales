@@ -147,6 +147,7 @@
                     'data' => [
                         'config' => [
                             'label' => __('Conditional On'),
+                            'notice' => $disabled ? __('Please leave blank if it is not an image.') : '',
                             'componentType' => Field::NAME,
                             'formElement' => Select::NAME,
                             'dataScope' => static::FIELD_CONDITIONAL_ON_NAME,
