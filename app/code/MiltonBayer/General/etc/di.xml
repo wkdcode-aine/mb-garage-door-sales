@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference type="Magento\Catalog\Model\Category" for="MiltonBayer\General\Api\Data\CategoryInterface"/>
+    <preference type="MiltonBayer\General\Model\CategoryWordpressList" for="MiltonBayer\General\Api\CategoryRepositoryInterface"/>
+
+</config>
